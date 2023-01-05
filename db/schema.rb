@@ -12,11 +12,17 @@
 
 ActiveRecord::Schema.define(version: 2023_01_02_120113) do
 
+  create_table "generations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.date "birth_day", null: false
+    t.integer "generation_id", null: false
     t.string "favorites_ski_resort", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
