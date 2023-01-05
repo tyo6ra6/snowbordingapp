@@ -36,6 +36,11 @@
          <%= f.date_field  :birth_day, class: "form-control"%>
         </div>
 
+         <div class="form-group">
+           <%= f.label :generation_id, "年齢" %><br />
+         <%= f.collection_select :generation_id, Generation.all, :id, :name, {}, class: "form-control" %>
+        </div>
+
        <div class="form-group">
          <%= f.label :favorites_ski_resort, "よく行くスキー場" %><br />
          <%= f.text_field :favorites_ski_resort, id:"user_body_weight", autofocus: true, autocomplete: "body_weight", class: "form-control" %>

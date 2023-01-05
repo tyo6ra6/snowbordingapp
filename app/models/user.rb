@@ -8,5 +8,12 @@ class User < ApplicationRecord
          validates :nickname, presence: true
          validates :birth_day, presence: true
          validates :favorites_ski_resort, presence: true
+
+
+         extend ActiveHash::Associations::ActiveRecordExtensions
+         belongs_to :generation
          
+
+         validates :generation_id, numericality: { other_than: 1 }
+
 end
