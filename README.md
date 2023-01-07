@@ -21,11 +21,11 @@
 
 | Column            | Type       | Options                        |
 |------------------ |------------|--------------------------------|
-| area_id 　        | integer     | null: false                    |
+| area_id           | integer     | null: false                    |
 | prefecture_id     | integer    | null: false                    | 
 | ski_resort_name   | string     | null: false                    |
 | weather_id        | integer    | null: false                    |
-| text              | text       | null: false                    |
+| thoughts          | text       | null: false                    |
 | user              | references | null: false, foreign_key: true |
 
 ### Association
