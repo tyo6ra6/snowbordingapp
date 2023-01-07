@@ -1,0 +1,49 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+
+  <h1><i class="fa-solid fa-pen  fa-beat"></i>おすすめのスキー場を記録<i class="fa-solid fa-pen  fa-beat"></i></h1>
+  <%=form_with model: @post, url: posts_path, local: true do |f|%>
+
+
+
+     <div class="form-group">
+    <%= f.label :ski_resort_name, "スキー場名" %><br />
+    <%= f.text_field :ski_resort_name, id:"ski_resort_name",placeholder:"ゲレンデ名", autofocus: true, autocomplete: "height", class: "form-control"  %>
+     </div>
+   
+    <div class="form-group">
+    <%= f.label :area_id, "エリア" %><br />
+    <%= f.collection_select :area_id, Area.all, :id, :name, {}, class: "form-control" %>
+    </div>
+
+     <div class="form-group">
+    <%= f.label :prefecture_id , "都道府県" %><br />
+    <%= f.collection_select :prefecture_id ,Prefecture.all, :id, :name, {}, class: "form-control"%>
+    </div>
+
+   
+
+
+     <div class="form-group">
+    <%= f.label :weather_id , "天気" %><br />
+    <%= f.collection_select :weather_id , Weather.all, :id, :name, {}, class: "form-control"  %>
+    </div>
+
+  <div class="form-group">
+     <%= f.label :thoughts , "感想・備考欄" %><br />
+     <%= f.text_area :thoughts, class:"text", id:"record_thoughts", placeholder:"スキー場の感想・メモ" ,rows:"7" ,maxlength:"1000" ,class: "form-control"%>
+  </div>
+
+      <div>  
+        <div class="d-grid gap-2 col-6 mx-auto">
+          <%= f.submit "記録する", class: "btn btn-dark" %>
+        </div>
+      </div>
+    </div>
+  
+ <% end %>
+</div>
+</div>
+</div>
