@@ -78,6 +78,9 @@
     <div >
       <p>メモ: <%= post.thoughts %></p>
     </div>
+
+      <%= image_tag post.image.variant(resize: '500x500'), class: "item-img" if post.image.attached? %>
+
       </div>
     
     </div>

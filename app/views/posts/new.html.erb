@@ -36,6 +36,11 @@
      <%= f.text_area :thoughts, class:"text", id:"record_thoughts", placeholder:"スキー場の感想・メモ" ,rows:"7" ,maxlength:"1000" ,class: "form-control"%>
   </div>
 
+   <div class="form-group">
+     <%= f.label :image , "画像を添付" %><br />
+     <%= f.file_field :image, id:"post-image", class: "form-control" %>
+   </div>
+
       <div>  
         <div class="d-grid gap-2 col-6 mx-auto">
           <%= f.submit "記録する", class: "btn btn-dark" %>
