@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts = Post.order('created_at DESC')
 
   end 
 
@@ -24,7 +25,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-      params.require(:post).permit(:ski_resort_name, :area_id, :prefecture_id, :weather_id, :thoughts ).merge(user_id: current_user.id)
+      params.require(:post).permit(:ski_resort_name, :area_id, :prefecture_id, :image, :weather_id, :thoughts ).merge(user_id: current_user.id)
     end
   
 
