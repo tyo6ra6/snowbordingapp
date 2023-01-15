@@ -23,8 +23,9 @@
     <a class="py-2 d-none d-md-inline-block" href="#">スキー場を検索する</a>
     
   <% if user_signed_in? %>
-    
+      <%= link_to( user_path) do %>
        <button type="button" class="btn btn-outline-primary">welcome ! <%=current_user.nickname%></button>
+      <% end %>
     
               
     <%= link_to( destroy_user_session_path, method: :delete ) do %>

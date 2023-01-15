@@ -1,0 +1,67 @@
+
+ 
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <h1>ユーザー情報編集<i class="fa-solid fa-user"></i></h1>
+      <%= form_with model: @user, local: true do |f| %>
+
+        <div class="form-group">
+           <%= f.label :name, "ニックネーム" %><br />
+          <%= f.text_field :nickname, autofocus: true, class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+        <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password, "パスワード（6文字以上）" %><br />
+          <% if @minimum_password_length %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        </div>
+
+        <div class="form-group">
+         <%= f.label :birth_day, "誕生日" %><br />
+         <%= f.date_field  :birth_day, class: "form-control"%>
+        </div>
+
+         <div class="form-group">
+           <%= f.label :generation_id, "年齢" %><br />
+         <%= f.collection_select :generation_id, Generation.all, :id, :name, {}, class: "form-control" %>
+        </div>
+
+       <div class="form-group">
+         <%= f.label :favorites_ski_resort, "よく行くスキー場" %><br />
+         <%= f.text_field :favorites_ski_resort, id:"user_body_weight", autofocus: true, autocomplete: "body_weight", class: "form-control" %>
+       </div>
+        </div>
+       <div>
+          <%= f.submit class: "btn btn-success" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  

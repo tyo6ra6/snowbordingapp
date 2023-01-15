@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     resources :comments, only: :create
    end
 
+   resource :user, except: [:new, :create, :destroy]
+
 end
