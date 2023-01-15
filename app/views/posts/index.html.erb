@@ -82,6 +82,12 @@
       <%= image_tag post.image.variant(resize: '500x500'), class: "item-img" if post.image.attached? %>
 
       </div>
+
+
+         <div>
+         <button type="button" class="btn btn-secondary btn-sm">投稿者 <%=post.user.nickname%></button>
+        </div>
+
     <div>
      <% if user_signed_in? %>
               
